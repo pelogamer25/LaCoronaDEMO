@@ -25,7 +25,7 @@ export default function Contact() {
   return (
     <>
       <Helmet>
-        <title>Contacto | Viajes La Corona</title>
+        <title>Contáctanos | Viajes La Corona</title>
         <meta
           name="description"
           content="Ponte en contacto con nuestros conserjes de viajes de lujo para comenzar a planificar tu próximo viaje inolvidable."
@@ -49,8 +49,8 @@ export default function Contact() {
               <span className="text-gradient-gold italic">Planificar</span>
             </h1>
             <p className="text-xl text-offwhite/70 max-w-2xl mx-auto">
-              Nuestros conserjes de viaje están listos para crear tu itinerario a medida.
-              Comunícate para comenzar el viaje.
+              Nuestros conserjes de viajes están listos para crear tu itinerario a medida.
+              Contáctanos para comenzar el viaje.
             </p>
           </motion.div>
 
@@ -80,11 +80,11 @@ export default function Contact() {
                       <MapPin className="w-6 h-6 text-gold" />
                     </div>
                     <div>
-                      <h4 className="font-medium text-lg mb-1">Sede Central</h4>
+                      <h4 className="font-medium text-lg mb-1">Sede Principal</h4>
                       <p className="text-offwhite/60">
-                        Lorem ipsum dolor sit amet
+                        Lorem ipsum dolor sit amet,
                         <br />
-                        Consectetur adipiscing elit
+                        consectetur adipiscing elit.
                       </p>
                     </div>
                   </div>
@@ -95,12 +95,12 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-medium text-lg mb-1">
-                        Servicio de Conserjería
+                        Mesa de Conserjería
                       </h4>
                       <p className="text-offwhite/60">
-                        +1 lorem ipsum
+                        Lorem ipsum
                         <br />
-                        Disponible 24/7
+                        Lorem ipsum
                       </p>
                     </div>
                   </div>
@@ -189,7 +189,7 @@ export default function Contact() {
                             type="tel"
                             id="phone"
                             className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-offwhite placeholder:text-offwhite/30 focus:outline-none focus:border-gold/50 focus:ring-1 focus:ring-gold/50 transition-all duration-300"
-                            placeholder="+1 lorem ipsum"
+                            placeholder="Lorem ipsum"
                           />
                         </div>
                         <div className="space-y-2">
@@ -277,7 +277,7 @@ export default function Contact() {
                           id="message"
                           rows={4}
                           className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-offwhite placeholder:text-offwhite/30 focus:outline-none focus:border-gold/50 focus:ring-1 focus:ring-gold/50 transition-all duration-300 resize-none"
-                          placeholder="Cuéntanos sobre el viaje de tus sueños..."
+                          placeholder="Cuéntanos sobre tu viaje de ensueño..."
                         ></textarea>
                       </div>
 
@@ -326,8 +326,8 @@ export default function Contact() {
                       </h3>
                       <p className="text-xl text-offwhite/80 max-w-md">
                         Gracias por elegir Viajes La Corona. Uno de nuestros
-                        conserjes de viajes de lujo se pondrá en contacto contigo dentro de 24
-                        horas para comenzar a diseñar tu itinerario.
+                        conserjes de viajes de lujo se pondrá en contacto contigo dentro de las 24
+                        horas para comenzar a crear tu itinerario.
                       </p>
                     </motion.div>
                   )}

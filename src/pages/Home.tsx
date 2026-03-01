@@ -24,11 +24,11 @@ export default function Home() {
     <>
       <Helmet>
         <title>
-          Viajes La Corona | Agencia de Viajes de Lujo y Experiencias Personalizadas
+          Viajes La Corona | Agencia de Viajes de Lujo y Experiencias a Medida
         </title>
         <meta
           name="description"
-          content="Descubre viajes inolvidables con Viajes La Corona. Paquetes de viaje premium, viajes personalizados y destinos exóticos diseñados para ti."
+          content="Descubre viajes inolvidables con Viajes La Corona. Paquetes de viaje premium, viajes personalizados y destinos exóticos hechos a tu medida."
         />
       </Helmet>
 
@@ -53,9 +53,10 @@ export default function Home() {
             className="text-5xl md:text-7xl lg:text-8xl font-serif font-medium mb-6 leading-tight"
           >
             Descubre Tu Próximo <br />
-            Viaje <span className="text-gradient-gold italic pr-2">
+            <span className="text-gradient-gold italic pr-2">
               Inolvidable
-            </span>
+            </span>{" "}
+            Viaje
           </motion.h1>
 
           <motion.p
@@ -64,8 +65,7 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="text-lg md:text-2xl text-offwhite/80 max-w-3xl mx-auto mb-12 font-light"
           >
-            Experiencias de viaje de lujo seleccionadas, paquetes personalizados y
-            destinos exóticos diseñados exclusivamente para el explorador exigente.
+            Experiencias de viaje de lujo curadas, paquetes personalizados y destinos exóticos diseñados exclusivamente para el explorador exigente.
           </motion.p>
 
           <motion.div
@@ -78,7 +78,7 @@ export default function Home() {
               to="/planner"
               className="px-8 py-4 rounded-full bg-gradient-to-r from-gold to-gold-light text-ocean font-semibold text-lg hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-2"
             >
-              Planifica Tu Viaje <ArrowRight className="w-5 h-5" />
+              Planifica tu Viaje <ArrowRight className="w-5 h-5" />
             </Link>
             <Link
               to="/destinations"
@@ -95,7 +95,7 @@ export default function Home() {
           className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
         >
           <span className="text-sm tracking-widest uppercase text-offwhite/50 font-medium">
-            Deslizar
+            Desplazar
           </span>
           <div className="w-[1px] h-12 bg-gradient-to-b from-gold/50 to-transparent" />
         </motion.div>
@@ -163,12 +163,12 @@ export default function Home() {
               <h2 className="text-4xl md:text-5xl font-serif font-medium mb-6">
                 Destinos{" "}
                 <span className="text-gradient-turquoise italic">
-                  Tendencia
+                  Populares
                 </span>
               </h2>
               <p className="text-offwhite/70 text-lg">
                 Sumérgete en los lugares más impresionantes del mundo.
-                Seleccionados para la mejor experiencia de lujo.
+                Seleccionados a mano para la mejor experiencia de lujo.
               </p>
             </div>
             <Link
@@ -368,12 +368,12 @@ export default function Home() {
             className="glass-card max-w-4xl mx-auto p-12 md:p-20 rounded-[3rem] border-white/20"
           >
             <h2 className="text-4xl md:text-6xl font-serif font-medium mb-6">
-              ¿Listo para tu próxima <br />
+              ¿Listo para tu Próxima <br />
               <span className="text-gradient-coral italic">Aventura?</span>
             </h2>
             <p className="text-xl text-offwhite/80 mb-10 max-w-2xl mx-auto">
-              Permítenos diseñar un itinerario a medida que coincida con tus sueños
-              más salvajes.
+              Permítenos diseñar un itinerario a medida que coincida con tus sueños más
+              salvajes.
             </p>
             <Link
               to="/contact"

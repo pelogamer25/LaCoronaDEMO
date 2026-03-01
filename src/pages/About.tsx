@@ -5,7 +5,7 @@ export default function About() {
   return (
     <>
       <Helmet>
-        <title>Sobre Nosotros | Viajes La Corona</title>
+        <title>Nosotros | Viajes La Corona</title>
         <meta
           name="description"
           content="Conoce a los visionarios detrás de Viajes La Corona."
@@ -24,8 +24,8 @@ export default function About() {
             Fundada en la creencia de que viajar debe ser transformador, Viajes
             La Corona es una agencia boutique dedicada a crear los viajes más
             exclusivos del mundo. Combinamos un profundo conocimiento local con
-            un lujo sin concesiones para ofrecer experiencias que perduran mucho después
-            de regresar a casa.
+            un lujo sin compromisos para ofrecer experiencias que perduran mucho
+            después de regresar a casa.
           </p>
         </div>
       </section>

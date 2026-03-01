@@ -8,17 +8,17 @@ const faqs = [
   {
     question: "¿Cómo reservar un viaje con Viajes La Corona?",
     answer:
-      "Reservar con nosotros es sencillo y personalizado. Puedes comenzar completando nuestro formulario de Planificador de Viajes Personalizado, o contactarnos directamente por WhatsApp o correo electrónico. Nuestros conserjes de viaje programarán una consulta para diseñar tu itinerario a medida.",
+      "Reservar con nosotros es sencillo y personalizado. Puedes comenzar completando nuestro formulario de Planificador de Viajes, o contactarnos directamente vía WhatsApp o correo electrónico. Nuestros conserjes de viajes programarán una consulta para diseñar tu itinerario a medida.",
   },
   {
     question: "¿Qué destinos están disponibles?",
     answer:
-      "Nos especializamos en destinos globales premium que incluyen las Maldivas, Santorini, la Costa Amalfitana, Bali, los Alpes Suizos y safaris exclusivos en África. Sin embargo, nuestra red nos permite organizar experiencias en prácticamente cualquier parte del mundo.",
+      "Nos especializamos en destinos globales premium, incluyendo las Maldivas, Santorini, la Costa Amalfitana, Bali, los Alpes Suizos y safaris exclusivos en África. Sin embargo, nuestra red nos permite curar experiencias en prácticamente cualquier parte del mundo.",
   },
   {
     question: "¿Ofrecen paquetes de viaje personalizados?",
     answer:
-      "Sí, absolutamente. Aunque ofrecemos paquetes exclusivos seleccionados, nuestra principal experiencia radica en diseñar experiencias de viaje 100% personalizadas adaptadas a tus intereses específicos, ritmo y preferencias de lujo.",
+      "Sí, absolutamente. Aunque ofrecemos paquetes exclusivos curados, nuestra principal experiencia radica en diseñar experiencias de viaje 100% personalizadas adaptadas a tus intereses específicos, ritmo y preferencias de lujo.",
   },
   {
     question: "¿Qué métodos de pago se aceptan?",
@@ -26,9 +26,9 @@ const faqs = [
       "Aceptamos todas las principales tarjetas de crédito (Visa, MasterCard, American Express), transferencias bancarias y pagos selectos con criptomonedas para reservas premium. Todas las transacciones se procesan de forma segura.",
   },
   {
-    question: "¿Está incluido el seguro de viaje?",
+    question: "¿El seguro de viaje está incluido?",
     answer:
-      "El seguro de viaje básico está incluido en nuestros paquetes Platinum y Diamond. Para otras reservas, recomendamos encarecidamente y podemos facilitar un seguro de viaje premium integral adaptado a tu itinerario específico.",
+      "El seguro de viaje básico está incluido en nuestros paquetes Platino y Diamante. Para otras reservas, recomendamos encarecidamente y podemos facilitar un seguro de viaje premium integral adaptado a tu itinerario específico.",
   },
 ];
 
@@ -55,7 +55,7 @@ export default function FAQ() {
         <title>Preguntas Frecuentes | Viajes La Corona</title>
         <meta
           name="description"
-          content="Encuentra respuestas a preguntas comunes sobre la reserva de viajes de lujo, paquetes personalizados, destinos y más con Viajes La Corona."
+          content="Encuentra respuestas a preguntas comunes sobre reservas de viajes de lujo, paquetes personalizados, destinos y más con Viajes La Corona."
         />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>

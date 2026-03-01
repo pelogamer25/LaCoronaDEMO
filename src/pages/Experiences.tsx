@@ -5,10 +5,10 @@ export default function Experiences() {
   return (
     <>
       <Helmet>
-        <title>Unique Experiences | Viajes La Corona</title>
+        <title>Experiencias Únicas | Viajes La Corona</title>
         <meta
           name="description"
-          content="Immersive, once-in-a-lifetime travel experiences."
+          content="Experiencias de viaje inmersivas y únicas en la vida."
         />
       </Helmet>
       <section className="pt-40 pb-32 min-h-screen relative flex items-center justify-center">
@@ -18,11 +18,11 @@ export default function Experiences() {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-7xl font-serif font-medium mb-6"
           >
-            Curated{" "}
-            <span className="text-gradient-coral italic">Experiences</span>
+            Experiencias{" "}
+            <span className="text-gradient-coral italic">Curadas</span>
           </motion.h1>
           <p className="text-xl text-offwhite/70">
-            Coming soon. Designing moments that take your breath away.
+            Próximamente. Diseñando momentos que te dejarán sin aliento.
           </p>
         </div>
       </section>

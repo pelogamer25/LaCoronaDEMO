@@ -26,7 +26,8 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-offwhite/70 leading-relaxed">
-              Curando viajes inolvidables y experiencias de viaje premium para el explorador exigente. Tu próxima aventura te espera.
+              Curando viajes inolvidables y experiencias de viaje premium para
+              el explorador exigente. Tu próxima aventura te espera.
             </p>
             <div className="flex gap-4">
               <a
@@ -57,19 +58,19 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               {[
-                { name: "Destinos", path: "destinations" },
-                { name: "Paquetes", path: "packages" },
-                { name: "Experiencias", path: "experiences" },
-                { name: "Nosotros", path: "about" },
-                { name: "Blog", path: "blog" },
+                "Destinos",
+                "Paquetes",
+                "Experiencias",
+                "Nosotros",
+                "Blog",
               ].map((item) => (
-                <li key={item.name}>
+                <li key={item}>
                   <Link
-                    to={`/${item.path}`}
+                    to={`/${item.toLowerCase().replace(" ", "")}`}
                     className="text-offwhite/70 hover:text-gold transition-colors flex items-center gap-2"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-gold/50" />
-                    {item.name}
+                    {item}
                   </Link>
                 </li>
               ))}
@@ -83,19 +84,19 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               {[
-                { name: "Preguntas Frecuentes", path: "faq" },
-                { name: "Contacto", path: "contact" },
-                { name: "Planificador de Viajes", path: "planner" },
-                { name: "Testimonios", path: "testimonials" },
-                { name: "Política de Privacidad", path: "privacy" },
+                "Preguntas Frecuentes",
+                "Contacto",
+                "Planificador de Viajes",
+                "Testimonios",
+                "Política de Privacidad",
               ].map((item) => (
-                <li key={item.name}>
+                <li key={item}>
                   <Link
-                    to={`/${item.path}`}
+                    to={`/${item.toLowerCase().replace(/ /g, "")}`}
                     className="text-offwhite/70 hover:text-gold transition-colors flex items-center gap-2"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-gold/50" />
-                    {item.name}
+                    {item}
                   </Link>
                 </li>
               ))}
@@ -111,14 +112,14 @@ export default function Footer() {
               <li className="flex items-start gap-3 text-offwhite/70">
                 <MapPin className="w-5 h-5 text-gold shrink-0 mt-0.5" />
                 <span>
-                  Lorem ipsum dolor sit amet
+                  Lorem ipsum dolor sit amet,
                   <br />
-                  Consectetur adipiscing elit
+                  consectetur adipiscing elit.
                 </span>
               </li>
               <li className="flex items-center gap-3 text-offwhite/70">
                 <Phone className="w-5 h-5 text-gold shrink-0" />
-                <span>+1 lorem ipsum</span>
+                <span>Lorem ipsum</span>
               </li>
               <li className="flex items-center gap-3 text-offwhite/70">
                 <Mail className="w-5 h-5 text-gold shrink-0" />

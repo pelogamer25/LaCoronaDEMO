@@ -21,7 +21,7 @@ export default function Blog() {
             El <span className="text-gradient-turquoise italic">Diario</span>
           </motion.h1>
           <p className="text-xl text-offwhite/70">
-            Próximamente. Relatos de los rincones más hermosos del mundo.
+            Próximamente. Historias de los rincones más hermosos del mundo.
           </p>
         </div>
       </section>

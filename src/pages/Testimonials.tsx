@@ -8,7 +8,7 @@ export default function Testimonials() {
         <title>Historias de Clientes | Viajes La Corona</title>
         <meta
           name="description"
-          content="Lee lo que nuestros clientes tienen que decir sobre sus experiencias de viajes de lujo."
+          content="Lee lo que nuestros clientes tienen que decir sobre sus experiencias de viaje de lujo."
         />
       </Helmet>
       <section className="pt-40 pb-32 min-h-screen relative flex items-center justify-center">
