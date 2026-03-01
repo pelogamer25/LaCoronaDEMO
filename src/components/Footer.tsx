@@ -13,7 +13,8 @@ export default function Footer() {
   return (
     <footer className="bg-ocean-light/50 backdrop-blur-3xl border-t border-white/5 pt-20 pb-10 relative overflow-hidden">
       {/* Background Glow */}
-      <div className="absolute -top-[500px] left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-turquoise/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute -top-[500px] left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-turquoise/10 rounded-full blur-[120px] pointer-events-none animate-pulse-slow" />
+      <div className="absolute bottom-[-200px] right-[-200px] w-[600px] h-[600px] bg-gold/10 rounded-full blur-[100px] pointer-events-none animate-blob" />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
@@ -21,7 +22,7 @@ export default function Footer() {
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-2 group">
               <Compass className="w-8 h-8 text-gold transition-transform duration-500 group-hover:rotate-45" />
-              <span className="font-serif text-2xl font-semibold tracking-wide text-offwhite">
+              <span className="font-serif text-2xl font-semibold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-offwhite via-gold to-offwhite animate-gradient bg-[length:200%_auto]">
                 La Corona
               </span>
             </Link>

@@ -35,7 +35,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Parallax Background */}
-        <motion.div className="absolute inset-0 z-0" style={{ y: y1 }}>
+        <motion.div className="absolute inset-0 z-0 scale-110" style={{ y: y1 }}>
           <div className="absolute inset-0 bg-ocean/40 backdrop-blur-[2px] z-10" />
           <img
             src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=2070&auto=format&fit=crop"
@@ -45,15 +45,22 @@ export default function Home() {
           />
         </motion.div>
 
+        {/* Floating Orbs */}
+        <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none">
+          <div className="absolute top-[20%] left-[10%] w-64 h-64 bg-gold/20 rounded-full blur-[80px] animate-blob" />
+          <div className="absolute top-[40%] right-[10%] w-80 h-80 bg-turquoise/20 rounded-full blur-[100px] animate-blob" style={{ animationDelay: "2s" }} />
+          <div className="absolute bottom-[10%] left-[30%] w-72 h-72 bg-coral/20 rounded-full blur-[90px] animate-blob" style={{ animationDelay: "4s" }} />
+        </div>
+
         <div className="container mx-auto px-6 relative z-20 text-center mt-20">
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="text-5xl md:text-7xl lg:text-8xl font-serif font-medium mb-6 leading-tight"
           >
             Descubre Tu Próximo <br />
-            <span className="text-gradient-gold italic pr-2">
+            <span className="text-gradient-gold italic pr-2 animate-gradient bg-[length:200%_auto]">
               Inolvidable
             </span>{" "}
             Viaje
@@ -82,9 +89,10 @@ export default function Home() {
             </Link>
             <Link
               to="/destinations"
-              className="px-8 py-4 rounded-full glass text-offwhite font-medium text-lg hover:bg-white/10 transition-all duration-300"
+              className="px-8 py-4 rounded-full glass text-offwhite font-medium text-lg hover:bg-white/10 transition-all duration-300 relative overflow-hidden group"
             >
-              Explorar Destinos
+              <span className="relative z-10">Explorar Destinos</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-turquoise/20 to-coral/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-gradient bg-[length:200%_auto]" />
             </Link>
           </motion.div>
         </div>
@@ -108,7 +116,7 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="glass-card p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 max-w-5xl mx-auto"
+          className="glass-card p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 max-w-5xl mx-auto animate-float shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
         >
           <div className="flex-1 w-full flex items-center gap-4 border-b md:border-b-0 md:border-r border-white/10 pb-4 md:pb-0 md:pr-6">
             <MapPin className="w-6 h-6 text-gold shrink-0" />
@@ -162,7 +170,7 @@ export default function Home() {
             <div className="max-w-2xl">
               <h2 className="text-4xl md:text-5xl font-serif font-medium mb-6">
                 Destinos{" "}
-                <span className="text-gradient-turquoise italic">
+                <span className="text-gradient-turquoise italic animate-gradient bg-[length:200%_auto]">
                   Populares
                 </span>
               </h2>
@@ -242,16 +250,33 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-32 relative bg-ocean-light/30 border-y border-white/5">
-        <div className="container mx-auto px-6">
+      <section className="py-32 relative bg-ocean-light/30 border-y border-white/5 overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
+          <div className="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] bg-coral/10 rounded-full blur-[120px] animate-pulse-slow" />
+          <div className="absolute bottom-[-10%] left-[-5%] w-[40%] h-[40%] bg-gold/10 rounded-full blur-[120px] animate-pulse-slow" style={{ animationDelay: "2s" }} />
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-4xl md:text-5xl font-serif font-medium mb-6">
-              La Diferencia <span className="text-gradient-coral italic">La Corona</span>{" "}
-            </h2>
-            <p className="text-offwhite/70 text-lg">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-5xl font-serif font-medium mb-6"
+            >
+              La Diferencia <span className="text-gradient-coral italic animate-gradient bg-[length:200%_auto]">La Corona</span>{" "}
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-offwhite/70 text-lg"
+            >
               No solo planeamos viajes; creamos experiencias transformadoras
               adaptadas a tus deseos únicos.
-            </p>
+            </motion.p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -280,7 +305,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: i * 0.2 }}
                 className="glass-card p-10 text-center group"
               >
-                <div className="w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-gold/20 to-coral/20 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                <div className="w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-gold/20 to-coral/20 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-[0_0_20px_rgba(212,175,55,0.2)] group-hover:shadow-[0_0_30px_rgba(212,175,55,0.4)]">
                   <feature.icon className="w-10 h-10 text-gold" />
                 </div>
                 <h3 className="text-2xl font-serif font-medium mb-4">
@@ -298,10 +323,15 @@ export default function Home() {
       {/* Testimonials */}
       <section className="py-32 relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
-          <h2 className="text-4xl md:text-5xl font-serif font-medium mb-16 text-center">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-serif font-medium mb-16 text-center"
+          >
             Amado por{" "}
-            <span className="text-gradient-gold italic">Viajeros</span>
-          </h2>
+            <span className="text-gradient-gold italic animate-gradient bg-[length:200%_auto]">Viajeros</span>
+          </motion.h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[1, 2, 3].map((i) => (
@@ -310,8 +340,9 @@ export default function Home() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
+                whileHover={{ y: -10, scale: 1.02 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="glass p-8 rounded-3xl relative"
+                className="glass p-8 rounded-3xl relative hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300"
               >
                 <div className="flex gap-1 text-gold mb-6">
                   {[1, 2, 3, 4, 5].map((s) => (
@@ -369,7 +400,7 @@ export default function Home() {
           >
             <h2 className="text-4xl md:text-6xl font-serif font-medium mb-6">
               ¿Listo para tu Próxima <br />
-              <span className="text-gradient-coral italic">Aventura?</span>
+              <span className="text-gradient-coral italic animate-gradient bg-[length:200%_auto]">Aventura?</span>
             </h2>
             <p className="text-xl text-offwhite/80 mb-10 max-w-2xl mx-auto">
               Permítenos diseñar un itinerario a medida que coincida con tus sueños más

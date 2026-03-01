@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { cn } from "../lib/utils";
@@ -34,6 +34,8 @@ const faqs = [
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const { scrollYProgress } = useScroll();
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, 150]);
 
   // JSON-LD Schema for FAQ
   const faqSchema = {
@@ -60,11 +62,24 @@ export default function FAQ() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
-      <section className="pt-40 pb-32 min-h-screen relative">
-        {/* Background Elements */}
-        <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-ocean-light/40 to-transparent pointer-events-none" />
+      <section className="pt-40 pb-32 min-h-screen relative overflow-hidden">
+        {/* Parallax Background */}
+        <motion.div className="absolute inset-0 z-0 scale-110" style={{ y: y1 }}>
+          <div className="absolute inset-0 bg-ocean/80 backdrop-blur-[2px] z-10" />
+          <img
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073&auto=format&fit=crop"
+            alt="FAQ Background"
+            className="w-full h-[120%] object-cover object-center"
+            referrerPolicy="no-referrer"
+          />
+        </motion.div>
 
-        <div className="container mx-auto px-6 relative z-10 max-w-4xl">
+        {/* Background Elements */}
+        <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-ocean-light/40 to-transparent pointer-events-none z-10" />
+        <div className="absolute top-[20%] right-[10%] w-80 h-80 bg-gold/10 rounded-full blur-[100px] animate-blob pointer-events-none z-10" />
+        <div className="absolute bottom-[20%] left-[10%] w-72 h-72 bg-turquoise/10 rounded-full blur-[120px] animate-pulse-slow pointer-events-none z-10" style={{ animationDelay: "1s" }} />
+
+        <div className="container mx-auto px-6 relative z-20 max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -73,7 +88,7 @@ export default function FAQ() {
           >
             <h1 className="text-5xl md:text-6xl font-serif font-medium mb-6">
               Preguntas{" "}
-              <span className="text-gradient-gold italic">Frecuentes</span>
+              <span className="text-gradient-gold italic animate-gradient bg-[length:200%_auto]">Frecuentes</span>
             </h1>
             <p className="text-xl text-offwhite/70">
               Todo lo que necesitas saber sobre tu próximo viaje de lujo.
@@ -87,6 +102,7 @@ export default function FAQ() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ scale: 1.01 }}
                 className="glass-card overflow-hidden"
               >
                 <button

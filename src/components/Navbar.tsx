@@ -45,7 +45,7 @@ export default function Navbar() {
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
           <Compass className="w-8 h-8 text-gold transition-transform duration-500 group-hover:rotate-45" />
-          <span className="font-serif text-2xl font-semibold tracking-wide text-offwhite">
+          <span className="font-serif text-2xl font-semibold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-offwhite via-gold to-offwhite animate-gradient bg-[length:200%_auto]">
             La Corona
           </span>
         </Link>

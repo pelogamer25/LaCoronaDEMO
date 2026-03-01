@@ -1,7 +1,10 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 
 export default function Packages() {
+  const { scrollYProgress } = useScroll();
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, 150]);
+
   return (
     <>
       <Helmet>
@@ -11,19 +14,41 @@ export default function Packages() {
           content="Descubre nuestros paquetes de viaje de lujo exclusivos."
         />
       </Helmet>
-      <section className="pt-40 pb-32 min-h-screen relative flex items-center justify-center">
-        <div className="text-center">
+      <section className="pt-40 pb-32 min-h-screen relative flex items-center justify-center overflow-hidden">
+        {/* Parallax Background */}
+        <motion.div className="absolute inset-0 z-0 scale-110" style={{ y: y1 }}>
+          <div className="absolute inset-0 bg-ocean/60 backdrop-blur-[2px] z-10" />
+          <img
+            src="https://images.unsplash.com/photo-1502602898657-3e907fa3a286?q=80&w=2072&auto=format&fit=crop"
+            alt="Luxury Packages"
+            className="w-full h-[120%] object-cover object-center"
+            referrerPolicy="no-referrer"
+          />
+        </motion.div>
+
+        {/* Floating Orbs */}
+        <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none">
+          <div className="absolute top-[20%] left-[20%] w-80 h-80 bg-gold/20 rounded-full blur-[100px] animate-blob" />
+          <div className="absolute bottom-[20%] right-[20%] w-72 h-72 bg-coral/10 rounded-full blur-[120px] animate-pulse-slow" style={{ animationDelay: "1s" }} />
+        </div>
+
+        <div className="text-center relative z-20">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-7xl font-serif font-medium mb-6"
           >
             Paquetes{" "}
-            <span className="text-gradient-gold italic">Exclusivos</span>
+            <span className="text-gradient-gold italic animate-gradient bg-[length:200%_auto]">Exclusivos</span>
           </motion.h1>
-          <p className="text-xl text-offwhite/70">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-xl text-offwhite/80 glass p-8 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] inline-block"
+          >
             Próximamente. Revelando nuestros itinerarios curados.
-          </p>
+          </motion.p>
         </div>
       </section>
     </>

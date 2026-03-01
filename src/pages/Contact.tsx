@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { Send, MapPin, Phone, Mail, CheckCircle2 } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { cn } from "../lib/utils";
@@ -7,6 +7,8 @@ import { cn } from "../lib/utils";
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const { scrollYProgress } = useScroll();
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, 200]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -33,9 +35,20 @@ export default function Contact() {
       </Helmet>
 
       <section className="pt-40 pb-32 min-h-screen relative overflow-hidden">
+        {/* Parallax Background */}
+        <motion.div className="absolute inset-0 z-0 scale-110" style={{ y: y1 }}>
+          <div className="absolute inset-0 bg-ocean/80 backdrop-blur-[2px] z-10" />
+          <img
+            src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=2070&auto=format&fit=crop"
+            alt="Luxury Office"
+            className="w-full h-[120%] object-cover object-center"
+            referrerPolicy="no-referrer"
+          />
+        </motion.div>
+
         {/* Background Elements */}
-        <div className="absolute top-[-20%] right-[-10%] w-[60%] h-[60%] rounded-full bg-gold/10 blur-[150px] pointer-events-none" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-turquoise/10 blur-[150px] pointer-events-none" />
+        <div className="absolute top-[-20%] right-[-10%] w-[60%] h-[60%] rounded-full bg-gold/10 blur-[150px] pointer-events-none animate-pulse-slow" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-turquoise/10 blur-[150px] pointer-events-none animate-blob" />
 
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
@@ -46,7 +59,7 @@ export default function Contact() {
           >
             <h1 className="text-5xl md:text-7xl font-serif font-medium mb-6">
               Comencemos a{" "}
-              <span className="text-gradient-gold italic">Planificar</span>
+              <span className="text-gradient-gold italic animate-gradient bg-[length:200%_auto]">Planificar</span>
             </h1>
             <p className="text-xl text-offwhite/70 max-w-2xl mx-auto">
               Nuestros conserjes de viajes están listos para crear tu itinerario a medida.
@@ -62,7 +75,7 @@ export default function Contact() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="lg:col-span-5 space-y-8"
             >
-              <div className="glass p-10 rounded-[2rem] h-full flex flex-col justify-center gap-12">
+              <div className="glass p-10 rounded-[2rem] h-full flex flex-col justify-center gap-12 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all duration-500">
                 <div>
                   <h3 className="text-3xl font-serif font-medium mb-8 text-gold">
                     Ponte en Contacto
@@ -131,7 +144,7 @@ export default function Contact() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="lg:col-span-7 relative"
             >
-              <div className="glass p-10 md:p-14 rounded-[2rem] relative overflow-hidden">
+              <div className="glass p-10 md:p-14 rounded-[2rem] relative overflow-hidden hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all duration-500">
                 <AnimatePresence mode="wait">
                   {!isSuccess ? (
                     <motion.form
@@ -321,7 +334,7 @@ export default function Contact() {
                       >
                         <CheckCircle2 className="w-12 h-12 text-white" />
                       </motion.div>
-                      <h3 className="text-4xl font-serif font-medium mb-4 text-gold">
+                      <h3 className="text-4xl font-serif font-medium mb-4 text-transparent bg-clip-text bg-gradient-to-r from-gold via-gold-light to-gold animate-gradient bg-[length:200%_auto]">
                         Solicitud Recibida
                       </h3>
                       <p className="text-xl text-offwhite/80 max-w-md">
